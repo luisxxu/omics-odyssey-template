@@ -83,7 +83,7 @@ RUN mamba install -c conda-forge r-survey -y && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER && \
     mamba clean -a -y
-
+# 
 USER jovyan
 
 # Override command to disable running jupyter notebook at launch
