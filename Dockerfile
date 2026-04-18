@@ -66,8 +66,12 @@ RUN pip install --no-cache-dir \
     spacy \
     scispacy \
     transformers \
-    sentence-transformers \
-    torch --index-url https://download.pytorch.org/whl/cpu
+    sentence-transformers
+
+# Install CPU-only PyTorch separately with its own index
+RUN pip install --no-cache-dir \
+    torch \
+    --index-url https://download.pytorch.org/whl/cpu
 
 # Download spaCy English model
 RUN python -m spacy download en_core_web_sm
